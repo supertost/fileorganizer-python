@@ -19,12 +19,40 @@ def main():
             existing_path_given = True
 
 
+
+
     extensions = utils.check_extensions(directory_path)
 
-    print(extensions)
+    if not extensions:
+        print("The entered directory has no files in it")
 
-    file_handler.folder_create(extensions=extensions, directory_path=directory_path)
-    file_handler.move_files_to_folders(directory_path)
+    #print(extensions)
+
+    categories = file_handler.extensions_to_categories(extensions)
+    #print(categories)
+
+
+    print("-----------------\n\n")
+    print("You are about to make changes in this directory:")
+    print(directory_path + "\n")
+    print("Below are the extensions and categories that the files are going to organized in \n")
+    print("extensions (file types inside the directory): " + str(extensions) + "\n")
+    print("categories (folders the files are going to be organized in): " + str(categories) + "\n")
+
+    print("Make sure this is the correct directory that you want to make changes to")
+    print("This action is not reversible, if you decide to revert back, you have to manually revert it back to the previous state if you do this\n")
+    
+    validation = input("Are you sure you want to proceed? [Y/n]")
+
+    if validation.casefold() == "y" or validation == "":
+
+        file_handler.folder_create(categories=categories, directory_path=directory_path)
+        file_handler.move_files_to_folders(directory_path)
+
+        print("Program successfully finished")
+
+    else:
+        print("Action cancelled, ending program")
 
 
 

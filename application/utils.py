@@ -12,7 +12,7 @@ def check_extensions(directory_path):
         if os.path.isfile(full_path):
 
             filename, file_extension = os.path.splitext(file)
-            print(f"File extension: {file_extension}")
+            #print(f"File extension: {file_extension}")
 
             file_extension = file_extension.replace(".", "")
 
