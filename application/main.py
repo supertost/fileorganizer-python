@@ -23,6 +23,10 @@ def main():
 
     extensions = utils.check_extensions(directory_path)
 
+    extensions = utils.remove_extensions_from_list(extensions)
+
+    #print(extensions)
+
     if not extensions:
         print("The entered directory has no files in it")
 
@@ -30,7 +34,6 @@ def main():
 
     categories = file_handler.extensions_to_categories(extensions)
     #print(categories)
-
 
     print("-----------------\n\n")
     print("You are about to make changes in this directory:")
@@ -47,14 +50,12 @@ def main():
     if validation.casefold() == "y" or validation == "":
 
         file_handler.folder_create(categories=categories, directory_path=directory_path)
-        file_handler.move_files_to_folders(directory_path)
+        file_handler.move_files_to_folders(directory_path=directory_path, extensions=extensions)
 
         print("Program successfully finished")
 
     else:
         print("Action cancelled, ending program")
-
-
 
 
 if __name__ == "__main__":

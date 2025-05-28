@@ -20,3 +20,21 @@ def check_extensions(directory_path):
 
 
     return extensions
+
+
+def remove_extensions_from_list(extensions):
+    
+    print(extensions)
+
+    print("Above are the file extensions present in the directory entered")
+    print("Write the extensions you want to remove from the list (for example: mp3 mp4 ogg)")
+    print("Press enter with an empty list if you do not want to remove anything")
+
+    extensions_to_remove = input()
+    extensions_to_remove_array = extensions_to_remove.split()
+
+    for extension in extensions_to_remove_array:
+        if extension in extensions:
+            extensions.remove(extension)
+
+    return extensions

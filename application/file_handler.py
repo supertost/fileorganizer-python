@@ -19,7 +19,7 @@ def folder_create(categories, directory_path):
 
 
 
-def move_files_to_folders(directory_path):
+def move_files_to_folders(directory_path, extensions):
     
     for file in os.listdir(directory_path):
 
@@ -29,20 +29,25 @@ def move_files_to_folders(directory_path):
 
             category = categorize_by_type(file)
 
+            filename, file_extension = os.path.splitext(file)
+            file_extension = file_extension.replace(".", "")
+            
             if category == "Unknown":
 
-                filename, file_extension = os.path.splitext(file)
-                file_extension = file_extension.replace(".", "")
 
-                destination_directory = os.path.join(directory_path, file_extension)
-                #print(destination_directory)
+                if file_extension in extensions:
+
+                    destination_directory = os.path.join(directory_path, file_extension)
+                    #print(destination_directory)
+                    shutil.move(full_path, destination_directory)
 
             else:
 
-                destination_directory = os.path.join(directory_path, category)
-                #print(destination_directory)
+                if file_extension in extensions:
 
-            shutil.move(full_path, destination_directory)
+                    destination_directory = os.path.join(directory_path, category)
+                    #print(destination_directory)
+                    shutil.move(full_path, destination_directory)
 
 
 
