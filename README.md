@@ -18,10 +18,11 @@
 
 ## Program in action
 1. Organization with extension **extension exclusion**
-<video src="https://github.com/supertost/fileorganizer-python/blob/main/assets/screen-recordings/fileorganize-exclusion.mp4" alt="exclusion video"></video>
+<video src="https://github.com/user-attachments/assets/d1a9ce2a-eeb4-4336-b8fd-f4e86880caba" alt="exclusion video"></video>
 
 2. Organization with **no extension exclusion**
-<video src="https://github.com/supertost/fileorganizer-python/blob/main/assets/screen-recordings/fileorganize-no-exclusion.mp4" alt="no exclusion video"></video>
+<video src="https://github.com/user-attachments/assets/c5b80898-bb3f-4924-aada-413997ee2397" alt="no exclusion video"></video>
+
 
 ## Installation
 
