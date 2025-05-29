@@ -15,7 +15,7 @@ def main():
             continue
 
         if os.path.exists(directory_path):
-            print(f"The location '{directory_path}' was found, continuing with the program")
+            print(f"The location '{directory_path}' was found, continuing with the program \n\n")
             existing_path_given = True
 
 
@@ -36,14 +36,14 @@ def main():
     #print(categories)
 
     print("-----------------\n\n")
-    print("You are about to make changes in this directory:")
+    print("You are about to make changes to this directory:")
     print(directory_path + "\n")
-    print("Below are the extensions and categories that the files are going to organized in \n")
-    print("extensions (file types inside the directory): " + str(extensions) + "\n")
-    print("categories (folders the files are going to be organized in): " + str(categories) + "\n")
+    print("Below are the extensions and categories that the files will be organized into: \n")
+    print("     - File Extensions (file types inside the directory that will be organized): " + str(extensions) + "\n")
+    print("     - Categories (folders the files will be organized into): " + str(categories) + "\n")
 
-    print("Make sure this is the correct directory that you want to make changes to")
-    print("This action is not reversible, if you decide to revert back, you have to manually revert it back to the previous state if you do this\n")
+    print("Please make sure this is the correct directory where you want to make changes.")
+    print("This action is not reversible. If you decide to revert, you will have to manually restore the previous state\n")
     
     validation = input("Are you sure you want to proceed? [Y/n]")
 
